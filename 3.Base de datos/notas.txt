@@ -1,0 +1,4 @@
+
+Nota sobre el respaldo de la base de datos de cervecerias (Dump SQL)
+
+Se genero un archivo de respaldo completo llamado bd_cervecerias_completo  mediante la herramienta Data Export de MySQL Workbench
