@@ -92,4 +92,8 @@ CREATE TABLE log_audit (
     user VARCHAR(100)
 );
 
+
 SET FOREIGN_KEY_CHECKS = 1;
+
+
+
