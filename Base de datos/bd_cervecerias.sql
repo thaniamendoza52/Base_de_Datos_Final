@@ -82,18 +82,81 @@ CREATE TABLE brewery_contacts (
     FOREIGN KEY (brewery_id) REFERENCES breweries(brewery_id)
 );
 
--- 8. TABLA: LOG_AUDIT
-DROP TABLE IF EXISTS log_audit;
-CREATE TABLE log_audit (
-    audit_id INT AUTO_INCREMENT PRIMARY KEY,
-    entity VARCHAR(50),
-    action VARCHAR(20),
-    date_time DATETIME,
-    user VARCHAR(100)
+
+----- TABLAS DE AUDITORIAS
+
+-- 8. TABLA: LOG_AUDIT_COUNTRIES
+DROP TABLE IF EXISTS log_audit_countries;
+CREATE TABLE log_audit_countries (
+audit_id INT AUTO_INCREMENT PRIMARY KEY,
+entity VARCHAR(50),
+action VARCHAR(20),
+date_time DATETIME,
+user VARCHAR(100)
+);
+
+-- 9. TABLA: LOG_AUDIT_STATES_PROVINCES
+DROP TABLE IF EXISTS log_audit_states_provinces;
+CREATE TABLE log_audit_states_provinces (
+audit_id INT AUTO_INCREMENT PRIMARY KEY,
+entity VARCHAR(50),
+action VARCHAR(20),
+date_time DATETIME,
+user VARCHAR(100)
+);
+
+-- 10. TABLA: LOG_AUDIT_CITIES
+DROP TABLE IF EXISTS log_audit_cities;
+CREATE TABLE log_audit_cities (
+audit_id INT AUTO_INCREMENT PRIMARY KEY,
+entity VARCHAR(50),
+action VARCHAR(20),
+date_time DATETIME,
+user VARCHAR(100)
+);
+
+-- 11. TABLA: LOG_AUDIT_BREWERY_TYPES
+DROP TABLE IF EXISTS log_audit_brewery_types;
+CREATE TABLE log_audit_brewery_types (
+audit_id INT AUTO_INCREMENT PRIMARY KEY,
+entity VARCHAR(50),
+action VARCHAR(20),
+date_time DATETIME,
+user VARCHAR(100)
+);
+
+-- 12. TABLA: LOG_AUDIT_BREWERIES
+DROP TABLE IF EXISTS log_audit_breweries;
+CREATE TABLE log_audit_breweries (
+audit_id INT AUTO_INCREMENT PRIMARY KEY,
+entity VARCHAR(50),
+action VARCHAR(20),
+date_time DATETIME,
+user VARCHAR(100)
+);
+
+-- 13. TABLA: LOG_AUDIT_BREWERY_ADDRESSES
+DROP TABLE IF EXISTS log_audit_brewery_addresses;
+CREATE TABLE log_audit_brewery_addresses (
+audit_id INT AUTO_INCREMENT PRIMARY KEY,
+entity VARCHAR(50),
+action VARCHAR(20),
+date_time DATETIME ,
+user VARCHAR(100)
+);
+
+-- 14. TABLA: LOG_AUDIT_BREWERY_CONTACTS
+DROP TABLE IF EXISTS log_audit_brewery_contacts;
+CREATE TABLE log_audit_brewery_contacts (
+audit_id INT AUTO_INCREMENT PRIMARY KEY,
+entity VARCHAR(50),
+action VARCHAR(20) ,
+date_time DATETIME,
+user VARCHAR(100)
 );
 
 
-SET FOREIGN_KEY_CHECKS = 1;
 
+SET FOREIGN_KEY_CHECKS = 1;
 
 
