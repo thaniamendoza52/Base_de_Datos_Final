@@ -2,15 +2,19 @@ USE bd_cervecerias;
 
 /*
 -- DROP TRIGGERS
+-- countries
 DROP TRIGGER IF EXISTS log_insert_countries;
 DROP TRIGGER IF EXISTS log_update_countries;
 DROP TRIGGER IF EXISTS log_delete_countries;
+-- states_provinces
 DROP TRIGGER IF EXISTS log_insert_states_provinces;
 DROP TRIGGER IF EXISTS log_update_states_provinces;
 DROP TRIGGER IF EXISTS log_delete_states_provinces;
+-- cities
 DROP TRIGGER IF EXISTS log_insert_cities;
 DROP TRIGGER IF EXISTS log_update_cities;
 DROP TRIGGER IF EXISTS log_delete_cities;
+
 */
 
 

@@ -27,7 +27,7 @@ def cargar_datos():
 
 
     # Leer el CSV limpio y convertir cualquier NaN (numérico o texto) a None real
-    df = pd.read_csv("../1. Analisis del proyecto/datasets/cervecerias_limpio.csv")  
+    df = pd.read_csv("../Analisis del proyecto/datasets/cervecerias_limpio.csv")
     df = df.astype(object).where(pd.notnull(df), None)
 
     conexion = conectar()
