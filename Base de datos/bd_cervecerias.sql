@@ -14,16 +14,32 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- brewery_contacts - Contactos de las cervecerías
 -- log_audit - Bitácora de auditoría
 
+/*
+-- DROP TABLES
+DROP TABLE IF EXISTS log_audit_brewery_contacts;
+DROP TABLE IF EXISTS log_audit_brewery_addresses;
+DROP TABLE IF EXISTS log_audit_breweries;
+DROP TABLE IF EXISTS log_audit_brewery_types;
+DROP TABLE IF EXISTS log_audit_cities;
+DROP TABLE IF EXISTS log_audit_states_provinces;
+DROP TABLE IF EXISTS log_audit_countries;
+DROP TABLE IF EXISTS brewery_contacts;
+DROP TABLE IF EXISTS brewery_addresses;
+DROP TABLE IF EXISTS breweries;
+DROP TABLE IF EXISTS brewery_types;
+DROP TABLE IF EXISTS cities;
+DROP TABLE IF EXISTS states_provinces;
+DROP TABLE IF EXISTS countries;
+*/
+
 
 -- 1. TABLA: COUNTRIES
-DROP TABLE IF EXISTS countries;
 CREATE TABLE countries (
     country_id INT AUTO_INCREMENT PRIMARY KEY,
     country_name VARCHAR(100) UNIQUE
 );
 
 -- 2. TABLA: STATES_PROVINCES
-DROP TABLE IF EXISTS states_provinces;
 CREATE TABLE states_provinces (
     state_id INT AUTO_INCREMENT PRIMARY KEY,
     state_name VARCHAR(100),
@@ -33,7 +49,6 @@ CREATE TABLE states_provinces (
 );
 
 -- 3. TABLA: CITIES
-DROP TABLE IF EXISTS cities;
 CREATE TABLE cities (
     city_id INT AUTO_INCREMENT PRIMARY KEY,
     city_name VARCHAR(100),
@@ -43,14 +58,12 @@ CREATE TABLE cities (
 );
 
 -- 4. TABLA: BREWERY_TYPES
-DROP TABLE IF EXISTS brewery_types;
 CREATE TABLE brewery_types (
     type_id INT AUTO_INCREMENT PRIMARY KEY,
     type_name VARCHAR(50) UNIQUE
 );
 
 -- 5. TABLA: BREWERIES
-DROP TABLE IF EXISTS breweries;
 CREATE TABLE breweries (
     brewery_id VARCHAR(36) PRIMARY KEY,
     name VARCHAR(200),
@@ -59,7 +72,6 @@ CREATE TABLE breweries (
 );
 
 -- 6. TABLA: BREWERY_ADDRESSES
-DROP TABLE IF EXISTS brewery_addresses;
 CREATE TABLE brewery_addresses (
     address_id INT AUTO_INCREMENT PRIMARY KEY,
     brewery_id VARCHAR(36) UNIQUE,
@@ -73,7 +85,6 @@ CREATE TABLE brewery_addresses (
 );
 
 -- 7. TABLA: BREWERY_CONTACTS
-DROP TABLE IF EXISTS brewery_contacts;
 CREATE TABLE brewery_contacts (
     contact_id INT AUTO_INCREMENT PRIMARY KEY,
     brewery_id VARCHAR(36) UNIQUE,
@@ -86,7 +97,6 @@ CREATE TABLE brewery_contacts (
 ----- TABLAS DE AUDITORIAS
 
 -- 8. TABLA: LOG_AUDIT_COUNTRIES
-DROP TABLE IF EXISTS log_audit_countries;
 CREATE TABLE log_audit_countries (
 audit_id INT AUTO_INCREMENT PRIMARY KEY,
 entity VARCHAR(50),
@@ -96,7 +106,6 @@ user VARCHAR(100)
 );
 
 -- 9. TABLA: LOG_AUDIT_STATES_PROVINCES
-DROP TABLE IF EXISTS log_audit_states_provinces;
 CREATE TABLE log_audit_states_provinces (
 audit_id INT AUTO_INCREMENT PRIMARY KEY,
 entity VARCHAR(50),
@@ -106,7 +115,6 @@ user VARCHAR(100)
 );
 
 -- 10. TABLA: LOG_AUDIT_CITIES
-DROP TABLE IF EXISTS log_audit_cities;
 CREATE TABLE log_audit_cities (
 audit_id INT AUTO_INCREMENT PRIMARY KEY,
 entity VARCHAR(50),
@@ -116,7 +124,6 @@ user VARCHAR(100)
 );
 
 -- 11. TABLA: LOG_AUDIT_BREWERY_TYPES
-DROP TABLE IF EXISTS log_audit_brewery_types;
 CREATE TABLE log_audit_brewery_types (
 audit_id INT AUTO_INCREMENT PRIMARY KEY,
 entity VARCHAR(50),
@@ -126,7 +133,6 @@ user VARCHAR(100)
 );
 
 -- 12. TABLA: LOG_AUDIT_BREWERIES
-DROP TABLE IF EXISTS log_audit_breweries;
 CREATE TABLE log_audit_breweries (
 audit_id INT AUTO_INCREMENT PRIMARY KEY,
 entity VARCHAR(50),
@@ -136,7 +142,6 @@ user VARCHAR(100)
 );
 
 -- 13. TABLA: LOG_AUDIT_BREWERY_ADDRESSES
-DROP TABLE IF EXISTS log_audit_brewery_addresses;
 CREATE TABLE log_audit_brewery_addresses (
 audit_id INT AUTO_INCREMENT PRIMARY KEY,
 entity VARCHAR(50),
@@ -146,7 +151,6 @@ user VARCHAR(100)
 );
 
 -- 14. TABLA: LOG_AUDIT_BREWERY_CONTACTS
-DROP TABLE IF EXISTS log_audit_brewery_contacts;
 CREATE TABLE log_audit_brewery_contacts (
 audit_id INT AUTO_INCREMENT PRIMARY KEY,
 entity VARCHAR(50),

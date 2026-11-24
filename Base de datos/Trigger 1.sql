@@ -1,10 +1,23 @@
 USE bd_cervecerias;
 
--- TRIGGERS
---  ENTIDAD: countries 
-
--- INSERT
+/*
+-- DROP TRIGGERS
 DROP TRIGGER IF EXISTS log_insert_countries;
+DROP TRIGGER IF EXISTS log_update_countries;
+DROP TRIGGER IF EXISTS log_delete_countries;
+DROP TRIGGER IF EXISTS log_insert_states_provinces;
+DROP TRIGGER IF EXISTS log_update_states_provinces;
+DROP TRIGGER IF EXISTS log_delete_states_provinces;
+DROP TRIGGER IF EXISTS log_insert_cities;
+DROP TRIGGER IF EXISTS log_update_cities;
+DROP TRIGGER IF EXISTS log_delete_cities;
+*/
+
+
+-- TRIGGERS
+
+--  ENTIDAD: countries 
+-- INSERT
 DELIMITER //
 CREATE TRIGGER log_insert_countries
 AFTER INSERT ON countries
@@ -16,7 +29,6 @@ END //
 DELIMITER ;
 
 -- UPDATE
-DROP TRIGGER IF EXISTS log_update_countries;
 DELIMITER //
 CREATE TRIGGER log_update_countries
 AFTER UPDATE ON countries
@@ -28,7 +40,6 @@ END //
 DELIMITER ;
 
 -- DELETE
-DROP TRIGGER IF EXISTS log_delete_countries;
 DELIMITER //
 CREATE TRIGGER log_delete_countries
 AFTER DELETE ON countries
@@ -42,7 +53,6 @@ DELIMITER ;
 
 -- ENTIDAD: states_provinces 
 -- INSERT
-DROP TRIGGER IF EXISTS log_insert_states_provinces;
 DELIMITER //
 CREATE TRIGGER log_insert_states_provinces
 AFTER INSERT ON states_provinces
@@ -54,7 +64,6 @@ END //
 DELIMITER ;
 
 -- UPDATE
-DROP TRIGGER IF EXISTS log_update_states_provinces;
 DELIMITER //
 CREATE TRIGGER log_update_states_provinces
 AFTER UPDATE ON states_provinces
@@ -66,7 +75,6 @@ END //
 DELIMITER ;
 
 -- DELETE
-DROP TRIGGER IF EXISTS log_delete_states_provinces;
 DELIMITER //
 CREATE TRIGGER log_delete_states_provinces
 AFTER DELETE ON states_provinces
@@ -80,7 +88,6 @@ DELIMITER ;
 
 -- ENTIDAD: cities
 -- INSERT
-DROP TRIGGER IF EXISTS log_insert_cities;
 DELIMITER //
 CREATE TRIGGER log_insert_cities
 AFTER INSERT ON cities
@@ -92,7 +99,6 @@ END //
 DELIMITER ;
 
 -- UPDATE
-DROP TRIGGER IF EXISTS log_update_cities;
 DELIMITER //
 CREATE TRIGGER log_update_cities
 AFTER UPDATE ON cities
@@ -104,7 +110,6 @@ END //
 DELIMITER ;
 
 -- DELETE
-DROP TRIGGER IF EXISTS log_delete_cities;
 DELIMITER //
 CREATE TRIGGER log_delete_cities
 AFTER DELETE ON cities

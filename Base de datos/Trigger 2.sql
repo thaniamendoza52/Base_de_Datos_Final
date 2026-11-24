@@ -1,10 +1,20 @@
 USE bd_cervecerias;
 
--- TRIGGERS
--- ENTIDAD: brewery_types
-
--- INSERT
+/*
+-- DROP TRIGGERS
 DROP TRIGGER IF EXISTS log_insert_brewery_types;
+DROP TRIGGER IF EXISTS log_update_brewery_types;
+DROP TRIGGER IF EXISTS log_delete_brewery_types;
+DROP TRIGGER IF EXISTS log_insert_breweries;
+DROP TRIGGER IF EXISTS log_update_breweries;
+DROP TRIGGER IF EXISTS log_delete_breweries;
+*/
+
+
+-- TRIGGERS
+
+-- ENTIDAD: brewery_types
+-- INSERT
 DELIMITER //
 CREATE TRIGGER log_insert_brewery_types
 AFTER INSERT ON brewery_types
@@ -16,7 +26,6 @@ END //
 DELIMITER ;
 
 -- UPDATE
-DROP TRIGGER IF EXISTS log_update_brewery_types;
 DELIMITER //
 CREATE TRIGGER log_update_brewery_types
 AFTER UPDATE ON brewery_types
@@ -28,7 +37,6 @@ END //
 DELIMITER ;
 
 -- DELETE
-DROP TRIGGER IF EXISTS log_delete_brewery_types;
 DELIMITER //
 CREATE TRIGGER log_delete_brewery_types
 AFTER DELETE ON brewery_types
@@ -41,9 +49,7 @@ DELIMITER ;
 
 
 -- ENTIDAD: breweries
-
 -- INSERT
-DROP TRIGGER IF EXISTS log_insert_breweries;
 DELIMITER //
 CREATE TRIGGER log_insert_breweries
 AFTER INSERT ON breweries
@@ -55,7 +61,6 @@ END //
 DELIMITER ;
 
 -- UPDATE
-DROP TRIGGER IF EXISTS log_update_breweries;
 DELIMITER //
 CREATE TRIGGER log_update_breweries
 AFTER UPDATE ON breweries
@@ -67,7 +72,6 @@ END //
 DELIMITER ;
 
 -- DELETE
-DROP TRIGGER IF EXISTS log_delete_breweries;
 DELIMITER //
 CREATE TRIGGER log_delete_breweries
 AFTER DELETE ON breweries
