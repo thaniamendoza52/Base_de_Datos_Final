@@ -1,0 +1,24 @@
+# Entorno virtual
+.venv/
+venv/
+
+# Configuraciones de PyCharm
+.idea/
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Credenciales privadas
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de registro
+*.log
