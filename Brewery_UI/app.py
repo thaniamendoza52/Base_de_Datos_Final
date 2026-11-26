@@ -5,15 +5,6 @@ from conexion import conectar, validar_usuario
 from conexion_mongodb import conectar_mongodb
 from getpass import getpass
 
-# CONEXION MYSQL
-mysql_db = mysql.connector.connect(
-    host="localhost",
-    port=3306,
-    user="usuario",
-    password=getpass("Contraseña de MySQL: "),
-    database="bd_cervecerias"
-)
-
 # CONFIGURACION DE LA PAGINA
 st.set_page_config(
     page_title="Brewery Management System",
